@@ -5,6 +5,6 @@ export default (state = [], action) => {
    case SAVE_COMMENT:
       return [...state, action.payload];
     default:
-      return [];
+      return state;
  }
 };
