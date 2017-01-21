@@ -15,10 +15,10 @@ global.window = global.document.defaultView;
 const $ = _$(global.window);
 
 // build render component helper that should render a given react class
-export function renderComponent(ComponentClass) {
+export function renderComponent(ComponentClass, props, state) {
   const componentInstance = TestUtils.renderIntoDocument(
-    <Provider store={createStore(reducers)}>
-      <ComponentClass />
+    <Provider store={createStore(reducers, state)}>
+      <ComponentClass {...props} />
     </Provider>
     );
   return $(ReactDOM.findDOMNode(componentInstance)); // produces HTML
