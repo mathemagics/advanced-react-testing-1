@@ -5,13 +5,14 @@ const CommentList = (props) => {
     const list = props.comments.map( comment => {
       return <li key={comment}>{comment}</li>
     });
+    console.log(list);
     return (
       <ul className="comment-list">{list}</ul>
     );
 };
 
 function mapStateToProps({ comments }) {
-  return { comments };
+   return { comments } ;
 }
 
 export default connect(mapStateToProps)(CommentList);
