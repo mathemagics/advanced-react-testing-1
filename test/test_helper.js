@@ -6,7 +6,8 @@ import { createStore } from 'redux'
 import reducers from '../src/reducers';
 import jsdom from 'jsdom';
 import _$ from 'jquery';
-import { expect } from 'chai';
+import chai, { expect } from 'chai';
+import chaiJquery from 'chai-jquery';
 
 // set up test environment to run like a browser in the command line
 global.document = jsdom.jsdom('<!doctype html><html><body></body></html>');
@@ -35,5 +36,6 @@ $.fn.simulate = function( eventName, value) {
 
 
 // set up chai jquery
+chaiJquery(chai, chai.util, $);
 
 export { expect }
